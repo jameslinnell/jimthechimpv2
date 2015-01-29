@@ -1,0 +1,18 @@
+? sites/default/files
+? sites/default/settings.php
+Index: includes/menu.inc
+===================================================================
+RCS file: /cvs/drupal/drupal/includes/menu.inc,v
+retrieving revision 1.429
+diff -u -p -r1.429 menu.inc
+--- includes/menu.inc	17 Dec 2010 01:08:15 -0000	1.429
++++ includes/menu.inc	18 Dec 2010 05:58:34 -0000
+@@ -1040,7 +1040,7 @@ function menu_tree_output($tree) {
+     }
+ 
+     // Allow menu-specific theme overrides.
+-    $element['#theme'] = 'menu_link__' . $data['link']['menu_name'];
++    $element['#theme'] = 'menu_link__' . strtr($data['link']['menu_name'], '-', '_');
+     $element['#attributes']['class'] = $class;
+     $element['#title'] = $data['link']['title'];
+     $element['#href'] = $data['link']['href'];

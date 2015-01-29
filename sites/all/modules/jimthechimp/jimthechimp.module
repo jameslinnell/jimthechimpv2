@@ -1,0 +1,9 @@
+<?php
+
+require_once 'jimthechimp.blocks.inc';
+
+function jtc_testblock() {
+	return '<h3>Jim the Chimp test block</h3>';
+}
+
+?>
